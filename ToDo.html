@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="ToDo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script defer src="ToDo.js"></script>
+</head>
+<body>
+    <h1 class="title">What's your day like?</h1>
+    <div class="all-tasks">
+        <h2 class="task-list-title">All Lists</h2>
+        <ul class="task-list" data-lists></ul>
+
+        <form action="" data-new-list-form>
+            <input 
+            type="text"
+            class="new list"
+            data-new-list-input
+            placeholder="New list name"
+            aria-label="New list name"
+            />
+            <button class="btn create" aria-label="create new list">+</button>
+        </form>
+    </div>
+
+    <div class="todo-list" data-list-display-container>
+        <div class="todo-header">
+            <h2 class="list-title" data-list-title>Sample Title</h2>
+            <p class="task-count" data-list-count>0 tasks remaining</p>            
+        </div>
+
+        <div class="todo-body">
+
+            <div class="tasks" data-tasks></div>
+
+            <div class="new-task-creator">
+                <form action="" data-new-task-form>
+                    <input 
+                    type="text"
+                    data-new-task-input
+                    class="new task"
+                    placeholder="Create new task"
+                    aria-label="Create new task"
+                    />         
+                    <button class="btn create" aria-label="create new task">+</button>                    
+                </form>
+            </div>
+
+            <div class="delete-task">
+                <button class="btn delete" data-clear-complete-tasks-button>
+                    Clear completed tasks
+                </button>
+
+                <button class="btn delete" data-delete-list-button>
+                    Delete list
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox"/>
+            <label><span class="custom-checkbox"></span></label>
+        </div>
+    </template> 
+</body>
+</html>
